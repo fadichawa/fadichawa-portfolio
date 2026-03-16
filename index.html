@@ -7,58 +7,21 @@
   <meta name="description" content="Fadi Chawa IT Manager Portfolio - Infrastructure, Cloud, Cybersecurity, ERP, Digital Transformation, and Technology Leadership." />
   <style>
     :root{
-  --bg:#060814;
-  --bg2:#0a1020;
-  --bg3:#10192d;
-  --card:rgba(255,255,255,0.06);
-  --card-strong:rgba(255,255,255,0.09);
-  --text:#f4f7ff;
-  --muted:#b5bfd3;
-  --line:rgba(255,255,255,0.10);
-  --accent:#7c5cff;
-  --accent2:#25d0ff;
-  --accent3:#6effc6;
-  --shadow:0 20px 50px rgba(0,0,0,0.35);
-  --max:1200px;
-}
+      --bg:#060814;
+      --bg2:#0a1020;
+      --bg3:#10192d;
+      --card:rgba(255,255,255,0.06);
+      --card-strong:rgba(255,255,255,0.09);
+      --text:#f4f7ff;
+      --muted:#b5bfd3;
+      --line:rgba(255,255,255,0.10);
+      --accent:#7c5cff;
+      --accent2:#25d0ff;
+      --accent3:#6effc6;
+      --shadow:0 20px 50px rgba(0,0,0,0.35);
+      --max:1200px;
+    }
 
-/* LOGO CARD STYLE */
-
-.logo-card{
-  flex-direction:column;
-  text-align:center;
-  gap:14px;
-}
-
-.logo-card img{
-  max-width:80%;
-  max-height:90px;
-  width:auto;
-  height:auto;
-  object-fit:contain;
-}
-
-.logo-card h3{
-  margin:0;
-  font-size:1.05rem;
-}
-
-.logo-card p{
-  margin:0;
-  color:var(--muted);
-  font-size:.95rem;
-}
-
-.logo-card span{
-  display:inline-block;
-  padding:8px 12px;
-  border-radius:999px;
-  font-size:.82rem;
-  color:#d5f8ff;
-  background:rgba(37,208,255,0.10);
-  border:1px solid rgba(37,208,255,0.18);
-}
-    
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -81,8 +44,8 @@
       background-image:
         linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 38px 38px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.55), transparent 85%);
+      background-size:38px 38px;
+      mask-image:linear-gradient(to bottom, rgba(0,0,0,0.55), transparent 85%);
       pointer-events:none;
       z-index:-1;
     }
@@ -258,6 +221,7 @@
       object-position:center 18%;
       border:4px solid rgba(255,255,255,0.12);
       box-shadow:0 16px 35px rgba(0,0,0,0.35);
+      background:rgba(255,255,255,0.04);
     }
 
     .profile-card h3{
@@ -397,6 +361,7 @@
       object-fit:cover;
       object-position:center;
       transition:transform .35s ease;
+      background:rgba(255,255,255,0.04);
     }
 
     .project-card:hover .project-image img{
@@ -419,14 +384,17 @@
     }
 
     .logo-box{
-      min-height:170px;
-      padding:22px;
+      min-height:220px;
+      padding:24px 18px;
       display:flex;
       align-items:center;
-      justify-content:center;
+      justify-content:flex-start;
       position:relative;
       overflow:hidden;
       transition:.25s ease;
+      flex-direction:column;
+      text-align:center;
+      gap:14px;
     }
 
     .logo-box::before{
@@ -446,11 +414,40 @@
 
     .logo-box img{
       max-width:82%;
-      max-height:88px;
+      max-height:90px;
       width:auto;
       height:auto;
       object-fit:contain;
       filter:drop-shadow(0 8px 20px rgba(0,0,0,0.22));
+      position:relative;
+      z-index:1;
+      margin-top:6px;
+      background:rgba(255,255,255,0.02);
+    }
+
+    .logo-box h3{
+      margin:0;
+      font-size:1.05rem;
+      position:relative;
+      z-index:1;
+    }
+
+    .logo-box p{
+      margin:0;
+      color:var(--muted);
+      font-size:.95rem;
+      position:relative;
+      z-index:1;
+    }
+
+    .logo-box span{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.82rem;
+      color:#d5f8ff;
+      background:rgba(37,208,255,0.10);
+      border:1px solid rgba(37,208,255,0.18);
       position:relative;
       z-index:1;
     }
@@ -756,45 +753,45 @@
       </div>
     </section>
 
-<section id="clients">
-  <div class="container">
-    <h2 class="title">Companies & Brands</h2>
-    <p class="subtitle">
-      Selected brands and companies I supported through website development, branding, logo creation,
-      and digital design execution.
-    </p>
+    <section id="clients">
+      <div class="container">
+        <h2 class="title">Companies & Brands</h2>
+        <p class="subtitle">
+          Selected brands and companies I supported through website development, branding, logo creation,
+          and digital design execution.
+        </p>
 
-    <div class="logo-grid">
-      <div class="glass logo-box logo-card">
-        <img src="assets/logo1.png" alt="MGELLC Logo">
-        <h3>MGELLC</h3>
-        <p>Oman</p>
-        <span>Website • Logo • Brand Design</span>
-      </div>
+        <div class="logo-grid">
+          <div class="glass logo-box">
+            <img src="assets/logo1.png" alt="MGE LLC Logo">
+            <h3>MGE LLC</h3>
+            <p>Oman</p>
+            <span>Website • Logo • Brand Design</span>
+          </div>
 
-      <div class="glass logo-box logo-card">
-        <img src="assets/logo2.png" alt="Zmeralda Logo">
-        <h3>Zmeralda</h3>
-        <p>Italy</p>
-        <span>Website • Logo • Brand Design</span>
-      </div>
+          <div class="glass logo-box">
+            <img src="assets/logo2.png" alt="Zmeralda Logo">
+            <h3>Zmeralda</h3>
+            <p>Italy</p>
+            <span>Website • Logo • Brand Design</span>
+          </div>
 
-      <div class="glass logo-box logo-card">
-        <img src="assets/logo3.png" alt="Jaccob Services Logo">
-        <h3>Jaccob Services</h3>
-        <p>Georgia, USA</p>
-        <span>Website • Logo • Brand Design</span>
-      </div>
+          <div class="glass logo-box">
+            <img src="assets/logo3.png" alt="Jaccob Services Logo">
+            <h3>Jaccob Services</h3>
+            <p>Georgia, USA</p>
+            <span>Website • Logo • Brand Design</span>
+          </div>
 
-      <div class="glass logo-box logo-card">
-        <img src="assets/logo4.png" alt="Beirut-IT Logo">
-        <h3>Beirut-IT</h3>
-        <p>Lebanon</p>
-        <span>Website • Logo • Brand Design</span>
+          <div class="glass logo-box">
+            <img src="assets/logo4.png" alt="Beirut-IT Logo">
+            <h3>Beirut-IT</h3>
+            <p>Lebanon</p>
+            <span>Website • Logo • Brand Design</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <section id="contact">
       <div class="container">

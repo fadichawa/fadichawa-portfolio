@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fadi Chawa | IT Manager Portfolio</title>
+  <meta name="description" content="Professional IT Manager portfolio showcasing leadership, infrastructure, cybersecurity, cloud, and digital transformation experience." />
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #121a2b;
+      --card: #182235;
+      --text: #f3f6fb;
+      --muted: #aab6cc;
+      --accent: #4da3ff;
+      --accent-2: #7ce2ff;
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 12px 30px rgba(0,0,0,0.25);
+      --max: 1150px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #09111d 0%, #0f1728 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11,18,32,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: var(--accent-2);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      transition: 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(124, 226, 255, 0.25);
+      border-radius: 999px;
+      color: var(--accent-2);
+      background: rgba(124, 226, 255, 0.08);
+      margin-bottom: 18px;
+      font-size: 0.9rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #07101c;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(77,163,255,0.25);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.18);
+      transform: translateY(-2px);
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 18px;
+      color: var(--accent-2);
+      font-size: 1rem;
+    }
+
+    .stat {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat:last-child {
+      border-bottom: none;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.8rem;
+      color: var(--text);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .about-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-bottom: 14px;
+      font-size: 1.15rem;
+      color: var(--accent-2);
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .skill-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      transition: 0.3s ease;
+    }
+
+    .skill-item:hover {
+      transform: translateY(-4px);
+      border-color: rgba(124, 226, 255, 0.22);
+    }
+
+    .skill-item h4 {
+      margin-bottom: 10px;
+      color: var(--text);
+      font-size: 1.05rem;
+    }
+
+    .skill-item p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .achievement-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .achievement-list li {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      color: var(--muted);
+    }
+
+    .achievement-list strong {
+      color: var(--text);
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      transition: 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .project-card h3 {
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 14px;
+      font-size: 0.96rem;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .project-tags span,
+    .cert-grid span {
+      font-size: 0.85rem;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(77,163,255,0.10);
+      color: var(--accent-2);
+      border: 1px solid rgba(77,163,255,0.15);
+      display: inline-block;
+    }
+
+    .cert-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .cert-box h4 {
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      margin-bottom: 12px;
+    }
+
+    .contact-links a {
+      display: inline-block;
+      margin-right: 14px;
+      margin-bottom: 10px;
+      color: var(--accent-2);
+    }
+
+    footer {
+      padding: 26px 0 40px;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid var(--border);
+      margin-top: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .skills-grid,
+      .projects-grid,
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .nav {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      nav ul {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <div class="logo">Fadi <span>Chawa</span></div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="tag">IT Manager • Infrastructure • Cybersecurity • Cloud • Digital Transformation</div>
+          <h1>Technology Leadership That Connects Operations, Security, and Business Growth</h1>
+          <p>
+            I am an experienced IT Manager with a strong background in IT infrastructure, service delivery,
+            cybersecurity, systems administration, and business-aligned technology operations. I help organizations
+            improve stability, efficiency, and digital readiness through structured IT leadership and practical execution.
+          </p>
+          <div class="buttons">
+            <a href="#contact" class="btn btn-primary">Contact Me</a>
+            <a href="resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>Professional Snapshot</h3>
+          <div class="stat">
+            <strong>15+ Years</strong>
+            <span>IT leadership, infrastructure, and operations experience</span>
+          </div>
+          <div class="stat">
+            <strong>ERP & Cloud</strong>
+            <span>Digital transformation, Microsoft 365, systems modernization</span>
+          </div>
+          <div class="stat">
+            <strong>Business Focus</strong>
+            <span>Service quality, security, governance, and operational improvement</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">
+          A strategic and hands-on IT Manager with experience leading infrastructure operations,
+          support services, systems improvement, and digital initiatives across business environments.
+        </p>
+
+        <div class="about-grid">
+          <div class="card">
+            <h3>Professional Profile</h3>
+            <p>
+              I specialize in aligning IT operations with business goals by building reliable systems,
+              strengthening security practices, leading technical teams, and delivering technology projects
+              that improve performance and reduce risk. My background includes infrastructure management,
+              service delivery, cloud platforms, vendor coordination, and operational governance.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>What I Bring</h3>
+            <p>
+              I combine technical depth with leadership and execution. From managing day-to-day IT operations
+              to supporting transformation initiatives, I focus on business continuity, user satisfaction,
+              process improvement, and scalable IT environments that support growth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Core Skills</h2>
+        <p class="section-subtitle">
+          Key strengths across operations, infrastructure, security, cloud, and IT leadership.
+        </p>
+
+        <div class="skills-grid">
+          <div class="skill-item">
+            <h4>IT Operations Management</h4>
+            <p>Managing daily IT services, support workflows, incident handling, SLA performance, and operational continuity.</p>
+          </div>
+
+          <div class="skill-item">
+            <h4>Infrastructure & Systems</h4>
+            <p>Servers, networks, virtualization, storage, backup strategy, endpoint management, and system reliability.</p>
+          </div>
+
+          <div class="skill-item">
+            <h4>Cybersecurity & Governance</h4>
+            <p>Policy enforcement, access control, endpoint protection, compliance awareness, and risk reduction practices.</p>
+          </div>
+
+          <div class="skill-item">
+            <h4>Cloud Platforms</h4>
+            <p>Microsoft 365, cloud-based collaboration, migration planning, user administration, and hybrid environments.</p>
+          </div>
+
+          <div class="skill-item">
+            <h4>Digital Transformation</h4>
+            <p>Supporting process modernization, ERP-related initiatives, systems improvement, and technology enablement.</p>
+          </div>
+
+          <div class="skill-item">
+            <h4>Leadership & Vendor Management</h4>
+            <p>Leading teams, managing external providers, coordinating stakeholders, and driving accountability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="container">
+        <h2 class="section-title">Key Achievements</h2>
+        <p class="section-subtitle">
+          Examples of the type of outcomes and impact delivered through structured IT management.
+        </p>
+
+        <ul class="achievement-list">
+          <li><strong>Improved IT service delivery</strong> by streamlining support operations, prioritization, and response workflows.</li>
+          <li><strong>Led infrastructure improvements</strong> to strengthen system availability, performance, and operational continuity.</li>
+          <li><strong>Enhanced security posture</strong> through better access control, endpoint protection, and policy-driven IT practices.</li>
+          <li><strong>Supported digital transformation initiatives</strong> involving system modernization, cloud adoption, and operational process improvement.</li>
+          <li><strong>Managed vendors and technical teams</strong> to deliver projects with stronger accountability and better service outcomes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">
+          Sample project highlights you can keep, edit, or replace with your real portfolio cases.
+        </p>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Microsoft 365 Migration & User Enablement</h3>
+            <p>
+              Planned and supported the migration of business communication and collaboration tools to Microsoft 365,
+              improving accessibility, centralized administration, and user productivity.
+            </p>
+            <div class="project-tags">
+              <span>Microsoft 365</span>
+              <span>Cloud</span>
+              <span>User Migration</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>Infrastructure Stability & Backup Readiness</h3>
+            <p>
+              Improved infrastructure reliability by reviewing server operations, backup procedures, storage planning,
+              and business continuity readiness to reduce operational risk.
+            </p>
+            <div class="project-tags">
+              <span>Infrastructure</span>
+              <span>Backup</span>
+              <span>Continuity</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>IT Governance & Operational Controls</h3>
+            <p>
+              Helped establish more structured IT operations through documentation, policy alignment,
+              asset control, support workflows, and service governance practices.
+            </p>
+            <div class="project-tags">
+              <span>Governance</span>
+              <span>Operations</span>
+              <span>Process</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>Cybersecurity Improvement Initiative</h3>
+            <p>
+              Strengthened the security environment through access management, endpoint security improvements,
+              awareness practices, and operational monitoring.
+            </p>
+            <div class="project-tags">
+              <span>Security</span>
+              <span>Access Control</span>
+              <span>Endpoints</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>ERP / Systems Modernization Support</h3>
+            <p>
+              Participated in business systems improvement efforts by supporting requirements gathering,
+              IT coordination, infrastructure readiness, and stakeholder communication.
+            </p>
+            <div class="project-tags">
+              <span>ERP</span>
+              <span>Transformation</span>
+              <span>Business Systems</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>Service Desk Performance Improvement</h3>
+            <p>
+              Improved support responsiveness by organizing issue handling, escalation paths, and team coordination
+              to deliver better end-user experience.
+            </p>
+            <div class="project-tags">
+              <span>Service Desk</span>
+              <span>SLA</span>
+              <span>Support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <div class="container">
+        <h2 class="section-title">Certifications & Professional Development</h2>
+        <p class="section-subtitle">
+          Replace these with your exact certifications, training, and credentials.
+        </p>
+
+        <div class="cert-grid">
+          <div class="cert-box">
+            <h4>IT Service Management</h4>
+            <span>ITIL / Service Delivery</span>
+          </div>
+          <div class="cert-box">
+            <h4>Project & Transformation</h4>
+            <span>PMP / Digital Transformation</span>
+          </div>
+          <div class="cert-box">
+            <h4>Cloud & Productivity</h4>
+            <span>Microsoft 365 / Azure / AWS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">
+          Ready for IT management, infrastructure leadership, service delivery, and digital transformation opportunities.
+        </p>
+
+        <div class="contact-grid">
+          <div class="card contact-card">
+            <h3>Get In Touch</h3>
+            <p><strong>Name:</strong> Fadi Chawa</p>
+            <p><strong>Email:</strong> your-email@example.com</p>
+            <p><strong>Location:</strong> Beirut, Lebanon</p>
+            <p><strong>Availability:</strong> Open to IT Manager and senior IT leadership opportunities</p>
+          </div>
+
+          <div class="card">
+            <h3>Professional Links</h3>
+            <div class="contact-links">
+              <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+              <a href="https://github.com/" target="_blank">GitHub</a>
+              <a href="resume.pdf" target="_blank">Resume PDF</a>
+              <a href="mailto:your-email@example.com">Send Email</a>
+            </div>
+            <p>
+              Update these links with your real LinkedIn profile, GitHub profile, email address,
+              and uploaded resume file.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Fadi Chawa • IT Manager Portfolio
+    </div>
+  </footer>
+
+</body>
+</html>

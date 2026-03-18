@@ -269,7 +269,7 @@
 
     .subtitle{
       color:var(--muted);
-      max-width:800px;
+      max-width:850px;
       margin-bottom:32px;
     }
 
@@ -377,85 +377,127 @@
       color:var(--muted);
     }
 
-    .logo-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:20px;
+    .cert-slider-wrap{
+      position:relative;
     }
 
-    .logo-box{
-      min-height:220px;
-      padding:24px 18px;
+    .cert-slider{
+      overflow:hidden;
+      border-radius:24px;
+    }
+
+    .cert-track{
+      display:flex;
+      transition:transform .5s ease;
+    }
+
+    .cert-slide{
+      min-width:100%;
+      padding:8px;
+    }
+
+    .cert-card{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      align-items:center;
+      padding:24px;
+      min-height:420px;
+    }
+
+    .cert-image{
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.10);
+      background:rgba(255,255,255,0.03);
+      min-height:320px;
       display:flex;
       align-items:center;
-      justify-content:flex-start;
-      position:relative;
-      overflow:hidden;
-      transition:.25s ease;
-      flex-direction:column;
-      text-align:center;
-      gap:14px;
+      justify-content:center;
     }
 
-    .logo-box::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(circle at top right, rgba(37,208,255,0.10), transparent 35%),
-        radial-gradient(circle at bottom left, rgba(124,92,255,0.12), transparent 40%);
-      pointer-events:none;
+    .cert-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      min-height:320px;
     }
 
-    .logo-box:hover{
-      transform:translateY(-5px);
-      background:var(--card-strong);
+    .cert-info h3{
+      font-size:1.45rem;
+      margin-bottom:12px;
     }
 
-    .logo-box img{
-      max-width:82%;
-      max-height:90px;
-      width:auto;
-      height:auto;
-      object-fit:contain;
-      filter:drop-shadow(0 8px 20px rgba(0,0,0,0.22));
-      position:relative;
-      z-index:1;
-      margin-top:6px;
-      background:rgba(255,255,255,0.02);
-    }
-
-    .logo-box h3{
-      margin:0;
-      font-size:1.05rem;
-      position:relative;
-      z-index:1;
-    }
-
-    .logo-box p{
-      margin:0;
+    .cert-info p{
       color:var(--muted);
-      font-size:.95rem;
-      position:relative;
-      z-index:1;
+      font-size:1rem;
+      margin-bottom:14px;
     }
 
-    .logo-box span{
+    .cert-info .issuer{
       display:inline-block;
-      padding:8px 12px;
+      padding:8px 14px;
       border-radius:999px;
-      font-size:.82rem;
+      font-size:.86rem;
       color:#d5f8ff;
       background:rgba(37,208,255,0.10);
       border:1px solid rgba(37,208,255,0.18);
-      position:relative;
-      z-index:1;
+      margin-bottom:14px;
     }
 
-    .logo-note{
+    .cert-counter{
       color:var(--muted);
-      font-size:.94rem;
-      margin-top:18px;
+      font-size:.95rem;
+      margin-top:12px;
+    }
+
+    .slider-controls{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      margin-top:20px;
+      flex-wrap:wrap;
+    }
+
+    .slider-btn{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,0.05);
+      color:var(--text);
+      padding:12px 18px;
+      border-radius:14px;
+      cursor:pointer;
+      font-weight:700;
+      transition:.25s ease;
+    }
+
+    .slider-btn:hover{
+      background:rgba(255,255,255,0.10);
+      transform:translateY(-2px);
+    }
+
+    .slider-dots{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .dot{
+      width:11px;
+      height:11px;
+      border-radius:50%;
+      border:none;
+      cursor:pointer;
+      background:rgba(255,255,255,0.25);
+      transition:.25s ease;
+    }
+
+    .dot.active{
+      background:linear-gradient(90deg,var(--accent2),var(--accent3));
+      transform:scale(1.15);
+      box-shadow:0 0 12px rgba(37,208,255,0.4);
     }
 
     .contact-grid{
@@ -488,8 +530,8 @@
       .hero-grid,
       .grid-2,
       .grid-3,
-      .logo-grid,
-      .contact-grid{
+      .contact-grid,
+      .cert-card{
         grid-template-columns:1fr;
       }
 
@@ -509,6 +551,14 @@
         width:180px;
         height:180px;
       }
+
+      .cert-card{
+        min-height:auto;
+      }
+
+      .cert-image img{
+        min-height:240px;
+      }
     }
   </style>
 </head>
@@ -523,7 +573,7 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#transformation">Transformation</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#clients">Clients</a></li>
+          <li><a href="#certifications">Certificates</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -688,6 +738,7 @@
           <li><strong>Strengthened infrastructure reliability</strong> through better systems oversight, backup practices, and operational discipline.</li>
           <li><strong>Enhanced security posture</strong> with improved access control, endpoint practices, and policy-driven governance.</li>
           <li><strong>Supported modernization initiatives</strong> involving cloud services, business systems, and digital process improvement.</li>
+          <li><strong>Delivered freelance IT consulting services</strong> across the <strong>USA, Europe, MENA, and Asia</strong>, primarily through remote projects focused on infrastructure optimization, cloud administration, digital transformation, systems support, and operational technology services.</li>
           <li><strong>Managed teams and vendors</strong> with a focus on accountability, continuity, and service quality.</li>
         </ul>
       </div>
@@ -753,41 +804,192 @@
       </div>
     </section>
 
-    <section id="clients">
+    <section id="certifications">
       <div class="container">
-        <h2 class="title">Companies & Brands</h2>
+        <h2 class="title">Certificates & Courses</h2>
         <p class="subtitle">
-          Selected brands and companies I supported through website development, branding, logo creation,
-          and digital design execution.
+          Academic qualifications, certifications, and professional development courses presented in a visual slider gallery.
         </p>
 
-        <div class="logo-grid">
-          <div class="glass logo-box">
-            <img src="assets/logo1.png" alt="MGE LLC Logo">
-            <h3>MGE LLC</h3>
-            <p>Oman</p>
-            <span>Website • Logo • Brand Design</span>
+        <div class="cert-slider-wrap">
+          <div class="cert-slider">
+            <div class="cert-track" id="certTrack">
+
+              <div class="cert-slide">
+                <div class="glass cert-card">
+                  <div class="cert-image">
+                    <img src="assets/cert1.jpg" alt="Bachelor of Science in Information Technology">
+                  </div>
+                  <div class="cert-info">
+                    <span class="issuer">American InterContinental University</span>
+                    <h3>Bachelor of Science in Information Technology</h3>
+                    <p>Academic degree in Information Technology supporting a strong foundation in systems, infrastructure, and business technology.</p>
+                    <div class="cert-counter">1 / 12</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cert-slide">
+                <div class="glass cert-card">
+                  <div class="cert-image">
+                    <img src="assets/cert2.jpg" alt="AI for Business Operation">
+                  </div>
+                  <div class="cert-info">
+                    <span class="issuer">Coursiv</span>
+                    <h3>AI for Business Operation</h3>
+                    <p>Focused on using AI tools and workflows to improve operational efficiency, business productivity, and decision support.</p>
+                    <div class="cert-counter">2 / 12</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cert-slide">
+                <div class="glass cert-card">
+                  <div class="cert-image">
+                    <img src="assets/cert3.jpg" alt="Master of Claude">
+                  </div>
+                  <div class="cert-info">
+                    <span class="issuer">Coursiv</span>
+                    <h3>Master of Claude</h3>
+                    <p>Advanced practical learning in AI-assisted analysis, structured thinking, and productivity enhancement using Claude.</p>
+                    <div class="cert-counter">3 / 12</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cert-slide">
+                <div class="glass cert-card">
+                  <div class="cert-image">
+                    <img src="assets/cert4.jpg" alt="AI Essentials for Project Managers">
+                  </div>
+                  <div class="cert-info">
+                    <span class="issuer">Coursiv</span>
+                    <h3>AI Essentials for Project Managers</h3>
+                    <p>Practical use of AI in project planning, reporting, documentation, collaboration, and delivery support.</p>
+                    <div class="cert-counter">4 / 12</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cert-slide">
+                <div class="glass cert-card">
+                  <div class="cert-image">
+                    <img src="assets/cert5.jpg" alt="Master of Loveable">
+                  </div>
+                  <div class="cert-info">
+                    <span class="issuer">Coursiv</span>
+                    <h3>Master of Loveable</h3>
+                    <p>Training focused on AI-assisted prototyping, workflow building, and rapid business-oriented solution design.</p>
+                    <div class="cert-counter">5 / 12</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cert-slide">
+                <div class="glass cert-card">
+                  <div class="cert-image">
+                    <img src="assets/cert6.jpg" alt="Master of ChatGPT">
+                  </div>
+                  <div class="cert-info">
+                    <span class="issuer">Coursiv</span>
+                    <h3>Master of ChatGPT</h3>
+                    <p>Advanced AI productivity training focused on business use cases, documentation, automation support, and strategic application.</p>
+                    <div class="cert-counter">6 / 12</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cert-slide">
+                <div class="glass cert-card">
+                  <div class="cert-image">
+                    <img src="assets/cert7.jpg" alt="ITIL 4 Fundamentals">
+                  </div>
+                  <div class="cert-info">
+                    <span class="issuer">IT Service Management</span>
+                    <h3>ITIL 4 Fundamentals - Essentials of IT Service Management</h3>
+                    <p>Foundational knowledge in IT service management, service value, support processes, and operational best practices.</p>
+                    <div class="cert-counter">7 / 12</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cert-slide">
+                <div class="glass cert-card">
+                  <div class="cert-image">
+                    <img src="assets/cert8.jpg" alt="Project Management Basics">
+                  </div>
+                  <div class="cert-info">
+                    <span class="issuer">GoSkills.com</span>
+                    <h3>Project Management Basics</h3>
+                    <p>Practical foundation in project planning, coordination, scheduling, scope handling, and delivery management.</p>
+                    <div class="cert-counter">8 / 12</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cert-slide">
+                <div class="glass cert-card">
+                  <div class="cert-image">
+                    <img src="assets/cert9.jpg" alt="Principles of Success">
+                  </div>
+                  <div class="cert-info">
+                    <span class="issuer">Starmanship & Associates</span>
+                    <h3>Principles of Success</h3>
+                    <p>Development-focused learning in mindset, performance, leadership principles, and personal effectiveness.</p>
+                    <div class="cert-counter">9 / 12</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cert-slide">
+                <div class="glass cert-card">
+                  <div class="cert-image">
+                    <img src="assets/cert10.jpg" alt="Microsoft Certified Systems Administrator">
+                  </div>
+                  <div class="cert-info">
+                    <span class="issuer">Microsoft</span>
+                    <h3>Microsoft Certified Systems Administrator (MCSA 2003)</h3>
+                    <p>Certification in Microsoft systems administration, server management, user administration, and infrastructure support.</p>
+                    <div class="cert-counter">10 / 12</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cert-slide">
+                <div class="glass cert-card">
+                  <div class="cert-image">
+                    <img src="assets/cert11.jpg" alt="CompTIA Security Plus">
+                  </div>
+                  <div class="cert-info">
+                    <span class="issuer">CompTIA</span>
+                    <h3>CompTIA Security+</h3>
+                    <p>Security certification covering foundational cybersecurity concepts, threat management, access control, and protection practices.</p>
+                    <div class="cert-counter">11 / 12</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cert-slide">
+                <div class="glass cert-card">
+                  <div class="cert-image">
+                    <img src="assets/cert12.jpg" alt="CompTIA Network Plus and A Plus">
+                  </div>
+                  <div class="cert-info">
+                    <span class="issuer">CompTIA</span>
+                    <h3>CompTIA Network+ & CompTIA A+</h3>
+                    <p>Foundational certifications in hardware support, troubleshooting, networking, connectivity, and technical support operations.</p>
+                    <div class="cert-counter">12 / 12</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
 
-          <div class="glass logo-box">
-            <img src="assets/logo2.png" alt="Zmeralda Logo">
-            <h3>Zmeralda</h3>
-            <p>Italy</p>
-            <span>Website • Logo • Brand Design</span>
-          </div>
-
-          <div class="glass logo-box">
-            <img src="assets/logo3.png" alt="Jaccob Services Logo">
-            <h3>Jaccob Services</h3>
-            <p>Georgia, USA</p>
-            <span>Website • Logo • Brand Design</span>
-          </div>
-
-          <div class="glass logo-box">
-            <img src="assets/logo4.png" alt="Beirut-IT Logo">
-            <h3>Beirut-IT</h3>
-            <p>Lebanon</p>
-            <span>Website • Logo • Brand Design</span>
+          <div class="slider-controls">
+            <button class="slider-btn" id="prevBtn">Previous</button>
+            <div class="slider-dots" id="sliderDots"></div>
+            <button class="slider-btn" id="nextBtn">Next</button>
           </div>
         </div>
       </div>
@@ -827,5 +1029,51 @@
       © 2026 Fadi Chawa • IT Manager Portfolio
     </div>
   </footer>
+
+  <script>
+    const track = document.getElementById('certTrack');
+    const slides = document.querySelectorAll('.cert-slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsContainer = document.getElementById('sliderDots');
+
+    let currentIndex = 0;
+
+    slides.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.classList.add('dot');
+      if(index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateSlider() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[currentIndex].classList.add('active');
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateSlider();
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlider();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateSlider();
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    setInterval(nextSlide, 5000);
+  </script>
 </body>
 </html>

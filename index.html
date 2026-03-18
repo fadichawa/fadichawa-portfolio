@@ -1,1065 +1,600 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fadi Chawa | IT Manager | Digital Transformation | Infrastructure</title>
-  <meta name="description" content="Fadi Chawa IT Manager Portfolio - Infrastructure, Cloud, Cybersecurity, ERP, Digital Transformation, and Technology Leadership." />
-  <style>
-    :root{
-      --bg:#060814;
-      --bg2:#0a1020;
-      --bg3:#10192d;
-      --card:rgba(255,255,255,0.06);
-      --card-strong:rgba(255,255,255,0.09);
-      --text:#f4f7ff;
-      --muted:#b5bfd3;
-      --line:rgba(255,255,255,0.10);
-      --accent:#7c5cff;
-      --accent2:#25d0ff;
-      --accent3:#6effc6;
-      --shadow:0 20px 50px rgba(0,0,0,0.35);
-      --max:1200px;
-    }
+<style>
+  :root{
+    --bg:#060814;
+    --bg2:#0a1020;
+    --bg3:#10192d;
+    --card:rgba(255,255,255,0.06);
+    --card-strong:rgba(255,255,255,0.09);
+    --text:#f4f7ff;
+    --muted:#b5bfd3;
+    --line:rgba(255,255,255,0.10);
+    --accent:#7c5cff;
+    --accent2:#25d0ff;
+    --accent3:#6effc6;
+    --shadow:0 20px 50px rgba(0,0,0,0.35);
+    --max:1200px;
+  }
 
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:Arial, Helvetica, sans-serif;
-      color:var(--text);
-      line-height:1.6;
-      background:
-        radial-gradient(circle at top left, rgba(124,92,255,0.20), transparent 30%),
-        radial-gradient(circle at top right, rgba(37,208,255,0.18), transparent 28%),
-        radial-gradient(circle at bottom center, rgba(110,255,198,0.10), transparent 30%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 45%, var(--bg3) 100%);
-      min-height:100vh;
-      overflow-x:hidden;
-    }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--text);
+    line-height:1.6;
+    background:
+      radial-gradient(circle at top left, rgba(124,92,255,0.20), transparent 30%),
+      radial-gradient(circle at top right, rgba(37,208,255,0.18), transparent 28%),
+      radial-gradient(circle at bottom center, rgba(110,255,198,0.10), transparent 30%),
+      linear-gradient(180deg, var(--bg) 0%, var(--bg2) 45%, var(--bg3) 100%);
+    min-height:100vh;
+    overflow-x:hidden;
 
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size:38px 38px;
-      mask-image:linear-gradient(to bottom, rgba(0,0,0,0.55), transparent 85%);
-      pointer-events:none;
-      z-index:-1;
-    }
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    -webkit-touch-callout:none;
+  }
 
-    a{text-decoration:none;color:inherit}
-    img{display:block;max-width:100%}
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size:38px 38px;
+    mask-image:linear-gradient(to bottom, rgba(0,0,0,0.55), transparent 85%);
+    pointer-events:none;
+    z-index:-1;
+  }
 
-    .container{
-      width:min(92%, var(--max));
-      margin:auto;
-    }
+  a{text-decoration:none;color:inherit}
+  img{
+    display:block;
+    max-width:100%;
+    -webkit-user-drag:none;
+    user-drag:none;
+    -webkit-user-select:none;
+    user-select:none;
+  }
 
-    header{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(6,8,20,0.72);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--line);
+  .container{
+    width:min(92%, var(--max));
+    margin:auto;
+  }
+
+  header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(6,8,20,0.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:18px 0;
+  }
+
+  .brand{
+    font-size:1.15rem;
+    font-weight:700;
+    letter-spacing:.5px;
+  }
+
+  .brand span{
+    background:linear-gradient(90deg,var(--accent2),var(--accent3));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    color:transparent;
+  }
+
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+  }
+
+  nav a{
+    color:var(--muted);
+    font-size:.95rem;
+    transition:.25s ease;
+  }
+
+  nav a:hover{color:var(--text)}
+
+  section{padding:84px 0}
+
+  .hero{
+    padding:88px 0 60px;
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.25fr .75fr;
+    gap:32px;
+    align-items:center;
+  }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    border:1px solid rgba(37,208,255,0.22);
+    background:rgba(37,208,255,0.08);
+    color:#bdf3ff;
+    padding:9px 14px;
+    border-radius:999px;
+    margin-bottom:18px;
+    font-size:.9rem;
+  }
+
+  .eyebrow::before{
+    content:"";
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:linear-gradient(90deg,var(--accent2),var(--accent3));
+    box-shadow:0 0 14px rgba(37,208,255,0.6);
+  }
+
+  h1{
+    font-size:3.2rem;
+    line-height:1.1;
+    margin-bottom:18px;
+    max-width:820px;
+  }
+
+  .hero p{
+    color:var(--muted);
+    font-size:1.06rem;
+    max-width:760px;
+    margin-bottom:24px;
+  }
+
+  .btns{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-top:10px;
+  }
+
+  .btn{
+    display:inline-block;
+    padding:13px 20px;
+    border-radius:14px;
+    font-weight:700;
+    transition:.25s ease;
+    border:1px solid transparent;
+  }
+
+  .btn-primary{
+    color:#051018;
+    background:linear-gradient(90deg,var(--accent2),var(--accent3));
+    box-shadow:0 10px 30px rgba(37,208,255,0.18);
+  }
+
+  .btn-primary:hover{transform:translateY(-2px)}
+
+  .btn-secondary{
+    border-color:var(--line);
+    background:rgba(255,255,255,0.04);
+    color:var(--text);
+  }
+
+  .btn-secondary:hover{
+    transform:translateY(-2px);
+    background:rgba(255,255,255,0.07);
+  }
+
+  .glass{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:24px;
+    backdrop-filter:blur(16px);
+    box-shadow:var(--shadow);
+  }
+
+  .profile-card{
+    padding:28px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .profile-card::after{
+    content:"";
+    position:absolute;
+    inset:auto -40px -40px auto;
+    width:140px;
+    height:140px;
+    background:radial-gradient(circle, rgba(124,92,255,0.35), transparent 70%);
+    pointer-events:none;
+  }
+
+  .profile-card img{
+    width:210px;
+    height:210px;
+    margin:0 auto 18px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:center 18%;
+    border:4px solid rgba(255,255,255,0.12);
+    box-shadow:0 16px 35px rgba(0,0,0,0.35);
+    background:rgba(255,255,255,0.04);
+    pointer-events:none;
+  }
+
+  .profile-card h3{
+    text-align:center;
+    margin-bottom:6px;
+    font-size:1.45rem;
+  }
+
+  .profile-card .role,
+  .profile-card .location{
+    text-align:center;
+    color:var(--muted);
+  }
+
+  .profile-card .location{margin-bottom:18px}
+
+  .mini-stats{
+    display:grid;
+    gap:12px;
+    margin-top:12px;
+  }
+
+  .mini-stats div{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    padding:14px 16px;
+  }
+
+  .mini-stats strong{
+    display:block;
+    font-size:1.15rem;
+    margin-bottom:3px;
+  }
+
+  .mini-stats span{
+    color:var(--muted);
+    font-size:.94rem;
+  }
+
+  .title{
+    font-size:2.1rem;
+    margin-bottom:12px;
+  }
+
+  .subtitle{
+    color:var(--muted);
+    max-width:850px;
+    margin-bottom:32px;
+  }
+
+  .grid-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+
+  .grid-3{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+
+  .card{
+    padding:24px;
+    transition:.25s ease;
+  }
+
+  .card:hover{
+    transform:translateY(-4px);
+    background:var(--card-strong);
+  }
+
+  .card h3,.card h4{
+    margin-bottom:12px;
+  }
+
+  .card p{
+    color:var(--muted);
+  }
+
+  .tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:14px;
+  }
+
+  .tags span{
+    padding:8px 12px;
+    border-radius:999px;
+    font-size:.84rem;
+    color:#d5f8ff;
+    background:rgba(37,208,255,0.10);
+    border:1px solid rgba(37,208,255,0.18);
+  }
+
+  .achievement-list{
+    list-style:none;
+    display:grid;
+    gap:14px;
+  }
+
+  .achievement-list li{
+    padding:18px 20px;
+    border-radius:18px;
+    color:var(--muted);
+    background:var(--card);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+  }
+
+  .achievement-list strong{color:var(--text)}
+
+  .project-card{
+    overflow:hidden;
+    transition:.25s ease;
+  }
+
+  .project-card:hover{
+    transform:translateY(-5px);
+    background:var(--card-strong);
+  }
+
+  .project-image{
+    height:220px;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.08);
+    margin-bottom:18px;
+    background:linear-gradient(135deg, rgba(124,92,255,0.18), rgba(37,208,255,0.12));
+    position:relative;
+  }
+
+  .project-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    transition:transform .35s ease;
+    background:rgba(255,255,255,0.04);
+    pointer-events:none;
+  }
+
+  .project-card:hover .project-image img{
+    transform:scale(1.04);
+  }
+
+  .project-card h3{
+    margin-bottom:10px;
+    font-size:1.14rem;
+  }
+
+  .project-card p{
+    color:var(--muted);
+  }
+
+  .cert-slider-wrap{
+    position:relative;
+  }
+
+  .cert-slider{
+    overflow:hidden;
+    border-radius:24px;
+  }
+
+  .cert-track{
+    display:flex;
+    transition:transform .5s ease;
+  }
+
+  .cert-slide{
+    min-width:100%;
+    padding:8px;
+  }
+
+  .cert-card{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    align-items:center;
+    padding:24px;
+    min-height:420px;
+  }
+
+  .cert-image{
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.10);
+    background:rgba(255,255,255,0.03);
+    min-height:320px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+  }
+
+  .cert-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    min-height:320px;
+    pointer-events:none;
+  }
+
+  .cert-image::after{
+    content:"© Fadi Chawa";
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:2rem;
+    font-weight:700;
+    color:rgba(255,255,255,0.15);
+    text-transform:uppercase;
+    letter-spacing:4px;
+    transform:rotate(-28deg);
+    pointer-events:none;
+    z-index:2;
+    text-shadow:0 2px 8px rgba(0,0,0,0.25);
+  }
+
+  .cert-info h3{
+    font-size:1.45rem;
+    margin-bottom:12px;
+  }
+
+  .cert-info p{
+    color:var(--muted);
+    font-size:1rem;
+    margin-bottom:14px;
+  }
+
+  .cert-info .issuer{
+    display:inline-block;
+    padding:8px 14px;
+    border-radius:999px;
+    font-size:.86rem;
+    color:#d5f8ff;
+    background:rgba(37,208,255,0.10);
+    border:1px solid rgba(37,208,255,0.18);
+    margin-bottom:14px;
+  }
+
+  .cert-counter{
+    color:var(--muted);
+    font-size:.95rem;
+    margin-top:12px;
+  }
+
+  .slider-controls{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    margin-top:20px;
+    flex-wrap:wrap;
+  }
+
+  .slider-btn{
+    border:1px solid var(--line);
+    background:rgba(255,255,255,0.05);
+    color:var(--text);
+    padding:12px 18px;
+    border-radius:14px;
+    cursor:pointer;
+    font-weight:700;
+    transition:.25s ease;
+    pointer-events:auto;
+  }
+
+  .slider-btn:hover{
+    background:rgba(255,255,255,0.10);
+    transform:translateY(-2px);
+  }
+
+  .slider-dots{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .dot{
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    border:none;
+    cursor:pointer;
+    background:rgba(255,255,255,0.25);
+    transition:.25s ease;
+    pointer-events:auto;
+  }
+
+  .dot.active{
+    background:linear-gradient(90deg,var(--accent2),var(--accent3));
+    transform:scale(1.15);
+    box-shadow:0 0 12px rgba(37,208,255,0.4);
+  }
+
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+
+  .contact-links a{
+    display:inline-block;
+    margin-right:14px;
+    margin-bottom:10px;
+    color:#c6f8ff;
+    font-weight:700;
+    pointer-events:auto;
+  }
+
+  .contact-links a:hover{
+    text-decoration:underline;
+  }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:28px 0 40px;
+    text-align:center;
+    color:var(--muted);
+    background:rgba(0,0,0,0.10);
+  }
+
+  @media (max-width: 980px){
+    .hero-grid,
+    .grid-2,
+    .grid-3,
+    .contact-grid,
+    .cert-card{
+      grid-template-columns:1fr;
     }
 
     .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      padding:18px 0;
-    }
-
-    .brand{
-      font-size:1.15rem;
-      font-weight:700;
-      letter-spacing:.5px;
-    }
-
-    .brand span{
-      background:linear-gradient(90deg,var(--accent2),var(--accent3));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
-      color:transparent;
+      flex-direction:column;
     }
 
     nav ul{
-      list-style:none;
-      display:flex;
-      gap:22px;
-      flex-wrap:wrap;
-    }
-
-    nav a{
-      color:var(--muted);
-      font-size:.95rem;
-      transition:.25s ease;
-    }
-
-    nav a:hover{color:var(--text)}
-
-    section{padding:84px 0}
-
-    .hero{
-      padding:88px 0 60px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.25fr .75fr;
-      gap:32px;
-      align-items:center;
-    }
-
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      border:1px solid rgba(37,208,255,0.22);
-      background:rgba(37,208,255,0.08);
-      color:#bdf3ff;
-      padding:9px 14px;
-      border-radius:999px;
-      margin-bottom:18px;
-      font-size:.9rem;
-    }
-
-    .eyebrow::before{
-      content:"";
-      width:9px;
-      height:9px;
-      border-radius:50%;
-      background:linear-gradient(90deg,var(--accent2),var(--accent3));
-      box-shadow:0 0 14px rgba(37,208,255,0.6);
+      justify-content:center;
     }
 
     h1{
-      font-size:3.2rem;
-      line-height:1.1;
-      margin-bottom:18px;
-      max-width:820px;
-    }
-
-    .hero p{
-      color:var(--muted);
-      font-size:1.06rem;
-      max-width:760px;
-      margin-bottom:24px;
-    }
-
-    .btns{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-top:10px;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:13px 20px;
-      border-radius:14px;
-      font-weight:700;
-      transition:.25s ease;
-      border:1px solid transparent;
-    }
-
-    .btn-primary{
-      color:#051018;
-      background:linear-gradient(90deg,var(--accent2),var(--accent3));
-      box-shadow:0 10px 30px rgba(37,208,255,0.18);
-    }
-
-    .btn-primary:hover{transform:translateY(-2px)}
-
-    .btn-secondary{
-      border-color:var(--line);
-      background:rgba(255,255,255,0.04);
-      color:var(--text);
-    }
-
-    .btn-secondary:hover{
-      transform:translateY(-2px);
-      background:rgba(255,255,255,0.07);
-    }
-
-    .glass{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:24px;
-      backdrop-filter:blur(16px);
-      box-shadow:var(--shadow);
-    }
-
-    .profile-card{
-      padding:28px;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .profile-card::after{
-      content:"";
-      position:absolute;
-      inset:auto -40px -40px auto;
-      width:140px;
-      height:140px;
-      background:radial-gradient(circle, rgba(124,92,255,0.35), transparent 70%);
-      pointer-events:none;
+      font-size:2.3rem;
     }
 
     .profile-card img{
-      width:210px;
-      height:210px;
-      margin:0 auto 18px;
-      border-radius:50%;
-      object-fit:cover;
-      object-position:center 18%;
-      border:4px solid rgba(255,255,255,0.12);
-      box-shadow:0 16px 35px rgba(0,0,0,0.35);
-      background:rgba(255,255,255,0.04);
-    }
-
-    .profile-card h3{
-      text-align:center;
-      margin-bottom:6px;
-      font-size:1.45rem;
-    }
-
-    .profile-card .role,
-    .profile-card .location{
-      text-align:center;
-      color:var(--muted);
-    }
-
-    .profile-card .location{margin-bottom:18px}
-
-    .mini-stats{
-      display:grid;
-      gap:12px;
-      margin-top:12px;
-    }
-
-    .mini-stats div{
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:16px;
-      padding:14px 16px;
-    }
-
-    .mini-stats strong{
-      display:block;
-      font-size:1.15rem;
-      margin-bottom:3px;
-    }
-
-    .mini-stats span{
-      color:var(--muted);
-      font-size:.94rem;
-    }
-
-    .title{
-      font-size:2.1rem;
-      margin-bottom:12px;
-    }
-
-    .subtitle{
-      color:var(--muted);
-      max-width:850px;
-      margin-bottom:32px;
-    }
-
-    .grid-2{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
-    }
-
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
-    }
-
-    .card{
-      padding:24px;
-      transition:.25s ease;
-    }
-
-    .card:hover{
-      transform:translateY(-4px);
-      background:var(--card-strong);
-    }
-
-    .card h3,.card h4{
-      margin-bottom:12px;
-    }
-
-    .card p{
-      color:var(--muted);
-    }
-
-    .tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:14px;
-    }
-
-    .tags span{
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:.84rem;
-      color:#d5f8ff;
-      background:rgba(37,208,255,0.10);
-      border:1px solid rgba(37,208,255,0.18);
-    }
-
-    .achievement-list{
-      list-style:none;
-      display:grid;
-      gap:14px;
-    }
-
-    .achievement-list li{
-      padding:18px 20px;
-      border-radius:18px;
-      color:var(--muted);
-      background:var(--card);
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-    }
-
-    .achievement-list strong{color:var(--text)}
-
-    .project-card{
-      overflow:hidden;
-      transition:.25s ease;
-    }
-
-    .project-card:hover{
-      transform:translateY(-5px);
-      background:var(--card-strong);
-    }
-
-    .project-image{
-      height:220px;
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,0.08);
-      margin-bottom:18px;
-      background:linear-gradient(135deg, rgba(124,92,255,0.18), rgba(37,208,255,0.12));
-    }
-
-    .project-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center;
-      transition:transform .35s ease;
-      background:rgba(255,255,255,0.04);
-    }
-
-    .project-card:hover .project-image img{
-      transform:scale(1.04);
-    }
-
-    .project-card h3{
-      margin-bottom:10px;
-      font-size:1.14rem;
-    }
-
-    .project-card p{
-      color:var(--muted);
-    }
-
-    .cert-slider-wrap{
-      position:relative;
-    }
-
-    .cert-slider{
-      overflow:hidden;
-      border-radius:24px;
-    }
-
-    .cert-track{
-      display:flex;
-      transition:transform .5s ease;
-    }
-
-    .cert-slide{
-      min-width:100%;
-      padding:8px;
+      width:180px;
+      height:180px;
     }
 
     .cert-card{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
-      align-items:center;
-      padding:24px;
-      min-height:420px;
-    }
-
-    .cert-image{
-      border-radius:20px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,0.10);
-      background:rgba(255,255,255,0.03);
-      min-height:320px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      min-height:auto;
     }
 
     .cert-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      min-height:320px;
+      min-height:240px;
     }
 
-    .cert-info h3{
-      font-size:1.45rem;
-      margin-bottom:12px;
+    .cert-image::after{
+      font-size:1.3rem;
+      letter-spacing:2px;
     }
-
-    .cert-info p{
-      color:var(--muted);
-      font-size:1rem;
-      margin-bottom:14px;
-    }
-
-    .cert-info .issuer{
-      display:inline-block;
-      padding:8px 14px;
-      border-radius:999px;
-      font-size:.86rem;
-      color:#d5f8ff;
-      background:rgba(37,208,255,0.10);
-      border:1px solid rgba(37,208,255,0.18);
-      margin-bottom:14px;
-    }
-
-    .cert-counter{
-      color:var(--muted);
-      font-size:.95rem;
-      margin-top:12px;
-    }
-
-    .slider-controls{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:14px;
-      margin-top:20px;
-      flex-wrap:wrap;
-    }
-
-    .slider-btn{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.05);
-      color:var(--text);
-      padding:12px 18px;
-      border-radius:14px;
-      cursor:pointer;
-      font-weight:700;
-      transition:.25s ease;
-    }
-
-    .slider-btn:hover{
-      background:rgba(255,255,255,0.10);
-      transform:translateY(-2px);
-    }
-
-    .slider-dots{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:center;
-      align-items:center;
-    }
-
-    .dot{
-      width:11px;
-      height:11px;
-      border-radius:50%;
-      border:none;
-      cursor:pointer;
-      background:rgba(255,255,255,0.25);
-      transition:.25s ease;
-    }
-
-    .dot.active{
-      background:linear-gradient(90deg,var(--accent2),var(--accent3));
-      transform:scale(1.15);
-      box-shadow:0 0 12px rgba(37,208,255,0.4);
-    }
-
-    .contact-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
-    }
-
-    .contact-links a{
-      display:inline-block;
-      margin-right:14px;
-      margin-bottom:10px;
-      color:#c6f8ff;
-      font-weight:700;
-    }
-
-    .contact-links a:hover{
-      text-decoration:underline;
-    }
-
-    footer{
-      border-top:1px solid var(--line);
-      padding:28px 0 40px;
-      text-align:center;
-      color:var(--muted);
-      background:rgba(0,0,0,0.10);
-    }
-
-    @media (max-width: 980px){
-      .hero-grid,
-      .grid-2,
-      .grid-3,
-      .contact-grid,
-      .cert-card{
-        grid-template-columns:1fr;
-      }
-
-      .nav{
-        flex-direction:column;
-      }
-
-      nav ul{
-        justify-content:center;
-      }
-
-      h1{
-        font-size:2.3rem;
-      }
-
-      .profile-card img{
-        width:180px;
-        height:180px;
-      }
-
-      .cert-card{
-        min-height:auto;
-      }
-
-      .cert-image img{
-        min-height:240px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="container nav">
-      <div class="brand">Fadi <span>Chawa</span></div>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#transformation">Transformation</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#certifications">Certificates</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">IT Manager • Infrastructure • ERP • Cloud • Cybersecurity</div>
-          <h1>Driving IT Operations, Digital Transformation, and Business-Focused Technology Leadership</h1>
-          <p>
-            I am an experienced IT Manager with a strong background in infrastructure, service delivery,
-            cloud platforms, cybersecurity, digital transformation, and operational governance. I help
-            organizations improve reliability, security, efficiency, and business alignment through
-            structured technology leadership.
-          </p>
-          <div class="btns">
-            <a href="#contact" class="btn btn-primary">Contact Me</a>
-            <a href="Fadi%20Chawa%20Resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
-          </div>
-        </div>
-
-        <div class="glass profile-card">
-          <img src="assets/Profile.jpg" alt="Fadi Chawa">
-          <h3>Fadi Chawa</h3>
-          <div class="role">IT Manager | Digital Transformation | Infrastructure & Cloud</div>
-          <div class="location">Beirut, Lebanon</div>
-
-          <div class="mini-stats">
-            <div>
-              <strong>15+ Years</strong>
-              <span>IT leadership and operational experience</span>
-            </div>
-            <div>
-              <strong>ERP & Cloud</strong>
-              <span>Business systems and modernization support</span>
-            </div>
-            <div>
-              <strong>Service Excellence</strong>
-              <span>Operations, governance, and team coordination</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <h2 class="title">About Me</h2>
-        <p class="subtitle">
-          Strategic and hands-on IT leadership focused on technology stability, business continuity,
-          security improvement, and scalable digital operations.
-        </p>
-
-        <div class="grid-2">
-          <div class="glass card">
-            <h3>Professional Summary</h3>
-            <p>
-              I bring a combination of technical knowledge and managerial execution across IT infrastructure,
-              service delivery, cybersecurity, cloud administration, and business systems support. My work
-              focuses on improving operational performance while ensuring IT remains aligned with organizational goals.
-            </p>
-          </div>
-
-          <div class="glass card">
-            <h3>Leadership Value</h3>
-            <p>
-              I lead with structure, accountability, and practical execution. From vendor coordination and
-              team supervision to infrastructure upgrades and transformation support, I focus on delivering
-              measurable improvements in service quality, resilience, and business efficiency.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="container">
-        <h2 class="title">Core Skills</h2>
-        <p class="subtitle">Key capabilities across business technology, operations, and IT management.</p>
-
-        <div class="grid-3">
-          <div class="glass card">
-            <h4>IT Operations Management</h4>
-            <p>Managing daily support, incident handling, IT services, SLA performance, and operational continuity.</p>
-          </div>
-          <div class="glass card">
-            <h4>Infrastructure & Systems</h4>
-            <p>Servers, virtualization, storage, backup readiness, networking, and systems reliability.</p>
-          </div>
-          <div class="glass card">
-            <h4>Cybersecurity & Governance</h4>
-            <p>Access control, endpoint security, policy alignment, operational controls, and risk reduction.</p>
-          </div>
-          <div class="glass card">
-            <h4>Cloud Platforms</h4>
-            <p>Microsoft 365, hybrid environments, cloud migration support, and centralized administration.</p>
-          </div>
-          <div class="glass card">
-            <h4>Vendor & Team Management</h4>
-            <p>Coordinating providers, supervising teams, and ensuring service accountability and delivery quality.</p>
-          </div>
-          <div class="glass card">
-            <h4>Business Systems Support</h4>
-            <p>ERP coordination, process improvement, system readiness, and transformation project support.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="transformation">
-      <div class="container">
-        <h2 class="title">ERP & Digital Transformation</h2>
-        <p class="subtitle">
-          A dedicated section for transformation-focused roles requiring governance, systems readiness,
-          stakeholder coordination, and business technology alignment.
-        </p>
-
-        <div class="grid-3">
-          <div class="glass card">
-            <h3>Transformation Planning Support</h3>
-            <p>Supported transformation efforts by aligning infrastructure readiness, user requirements, process flow considerations, and stakeholder communication.</p>
-            <div class="tags">
-              <span>Planning</span>
-              <span>Stakeholders</span>
-              <span>Readiness</span>
-            </div>
-          </div>
-
-          <div class="glass card">
-            <h3>ERP Readiness & Coordination</h3>
-            <p>Contributed to ERP-related initiatives through IT coordination, environment preparation, business system support, and cross-functional communication.</p>
-            <div class="tags">
-              <span>ERP</span>
-              <span>Systems</span>
-              <span>Coordination</span>
-            </div>
-          </div>
-
-          <div class="glass card">
-            <h3>Cloud & Productivity Modernization</h3>
-            <p>Improved user collaboration and administrative control through adoption of cloud-based tools and modern workplace technologies.</p>
-            <div class="tags">
-              <span>Microsoft 365</span>
-              <span>Cloud</span>
-              <span>Modern Workplace</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h2 class="title">Key Achievements</h2>
-        <p class="subtitle">Examples of business and operational impact delivered through IT leadership.</p>
-
-        <ul class="achievement-list">
-          <li><strong>Improved service delivery</strong> by organizing IT support operations, escalation paths, and response workflows.</li>
-          <li><strong>Strengthened infrastructure reliability</strong> through better systems oversight, backup practices, and operational discipline.</li>
-          <li><strong>Enhanced security posture</strong> with improved access control, endpoint practices, and policy-driven governance.</li>
-          <li><strong>Supported modernization initiatives</strong> involving cloud services, business systems, and digital process improvement.</li>
-          <li><strong>Delivered freelance IT consulting services</strong> across the <strong>USA, Europe, MENA, and Asia</strong>, primarily through remote projects focused on infrastructure optimization, cloud administration, digital transformation, systems support, and operational technology services.</li>
-          <li><strong>Managed teams and vendors</strong> with a focus on accountability, continuity, and service quality.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <h2 class="title">Featured Projects</h2>
-        <p class="subtitle">
-          Replace the titles, text, and screenshots below with your real project work.
-          Use non-confidential project images only.
-        </p>
-
-        <div class="grid-3">
-          <div class="glass card project-card">
-            <div class="project-image">
-              <img src="assets/project1.jpg" alt="Microsoft 365 migration project">
-            </div>
-            <h3>Microsoft 365 Migration</h3>
-            <p>
-              Migrated business communication and collaboration services to Microsoft 365 to improve
-              accessibility, administration, and productivity.
-            </p>
-            <div class="tags">
-              <span>Microsoft 365</span>
-              <span>Migration</span>
-              <span>Cloud</span>
-            </div>
-          </div>
-
-          <div class="glass card project-card">
-            <div class="project-image">
-              <img src="assets/project2.jpg" alt="Infrastructure stability initiative">
-            </div>
-            <h3>Infrastructure Stability Initiative</h3>
-            <p>
-              Improved systems reliability by reviewing server performance, backup readiness,
-              storage use, and continuity procedures.
-            </p>
-            <div class="tags">
-              <span>Servers</span>
-              <span>Backup</span>
-              <span>Continuity</span>
-            </div>
-          </div>
-
-          <div class="glass card project-card">
-            <div class="project-image">
-              <img src="assets/project3.jpg" alt="Cybersecurity improvement program">
-            </div>
-            <h3>Cybersecurity Improvement Program</h3>
-            <p>
-              Strengthened operational security through access control improvement, endpoint management,
-              and better governance practices.
-            </p>
-            <div class="tags">
-              <span>Security</span>
-              <span>Governance</span>
-              <span>Risk</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="certifications">
-      <div class="container">
-        <h2 class="title">Certificates & Courses</h2>
-        <p class="subtitle">
-          Academic qualifications, certifications, and professional development courses presented in a visual slider gallery.
-        </p>
-
-        <div class="cert-slider-wrap">
-          <div class="cert-slider">
-            <div class="cert-track" id="certTrack">
-
-              <div class="cert-slide">
-                <div class="glass cert-card">
-                  <div class="cert-image">
-                    <img src="assets/AI FOR BUSINESS OPERATIONS.jpg" alt="AI for Business Operation">
-                  </div>
-                  <div class="cert-info">
-                    <span class="issuer">Coursiv</span>
-                    <h3>AI for Business Operation</h3>
-                    <p>Focused on using AI tools and workflows to improve operational efficiency, business productivity, and decision support.</p>
-                    <div class="cert-counter">2 / 12</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cert-slide">
-                <div class="glass cert-card">
-                  <div class="cert-image">
-                    <img src="assets/Mastering Claude.jpg" alt="Master of Claude">
-                  </div>
-                  <div class="cert-info">
-                    <span class="issuer">Coursiv</span>
-                    <h3>Master of Claude</h3>
-                    <p>Advanced practical learning in AI-assisted analysis, structured thinking, and productivity enhancement using Claude.</p>
-                    <div class="cert-counter">3 / 12</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cert-slide">
-                <div class="glass cert-card">
-                  <div class="cert-image">
-                    <img src="assets/Ai project managment.jpg" alt="AI Essentials for Project Managers">
-                  </div>
-                  <div class="cert-info">
-                    <span class="issuer">Coursiv</span>
-                    <h3>AI Essentials for Project Managers</h3>
-                    <p>Practical use of AI in project planning, reporting, documentation, collaboration, and delivery support.</p>
-                    <div class="cert-counter">4 / 12</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cert-slide">
-                <div class="glass cert-card">
-                  <div class="cert-image">
-                    <img src="assets/MASTER OF LOVABLE.jpg" alt="Master of Lovable">
-                  </div>
-                  <div class="cert-info">
-                    <span class="issuer">Coursiv</span>
-                    <h3>Master of Lovable</h3>
-                    <p>Training focused on AI-assisted prototyping, workflow building, and rapid business-oriented solution design.</p>
-                    <div class="cert-counter">5 / 12</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cert-slide">
-                <div class="glass cert-card">
-                  <div class="cert-image">
-                    <img src="assets/Master of ChatGPT.jpg" alt="Master of ChatGPT">
-                  </div>
-                  <div class="cert-info">
-                    <span class="issuer">Coursiv</span>
-                    <h3>Master of ChatGPT</h3>
-                    <p>Advanced AI productivity training focused on business use cases, documentation, automation support, and strategic application.</p>
-                    <div class="cert-counter">6 / 12</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cert-slide">
-                <div class="glass cert-card">
-                  <div class="cert-image">
-                    <img src="assets/Essentials of IT Service managment.jpg" alt="ITIL 4 Fundamentals">
-                  </div>
-                  <div class="cert-info">
-                    <span class="issuer">IT Service Management</span>
-                    <h3>ITIL 4 Fundamentals - Essentials of IT Service Management</h3>
-                    <p>Foundational knowledge in IT service management, service value, support processes, and operational best practices.</p>
-                    <div class="cert-counter">7 / 12</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cert-slide">
-                <div class="glass cert-card">
-                  <div class="cert-image">
-                    <img src="assets/PMB.jpg" alt="Project Management Basics">
-                  </div>
-                  <div class="cert-info">
-                    <span class="issuer">GoSkills.com</span>
-                    <h3>Project Management Basics</h3>
-                    <p>Practical foundation in project planning, coordination, scheduling, scope handling, and delivery management.</p>
-                    <div class="cert-counter">8 / 12</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cert-slide">
-                <div class="glass cert-card">
-                  <div class="cert-image">
-                    <img src="assets/cert9.jpg" alt="Principles of Success">
-                  </div>
-                  <div class="cert-info">
-                    <span class="issuer">Starmanship & Associates</span>
-                    <h3>Principles of Success</h3>
-                    <p>Development-focused learning in mindset, performance, leadership principles, and personal effectiveness.</p>
-                    <div class="cert-counter">9 / 12</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cert-slide">
-                <div class="glass cert-card">
-                  <div class="cert-image">
-                    <img src="assets/cert10.jpg" alt="Microsoft Certified Systems Administrator">
-                  </div>
-                  <div class="cert-info">
-                    <span class="issuer">Microsoft</span>
-                    <h3>Microsoft Certified Systems Administrator (MCSA 2003)</h3>
-                    <p>Certification in Microsoft systems administration, server management, user administration, and infrastructure support.</p>
-                    <div class="cert-counter">10 / 12</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cert-slide">
-                <div class="glass cert-card">
-                  <div class="cert-image">
-                    <img src="assets/cert11.jpg" alt="CompTIA Security Plus">
-                  </div>
-                  <div class="cert-info">
-                    <span class="issuer">CompTIA</span>
-                    <h3>CompTIA Security+</h3>
-                    <p>Security certification covering foundational cybersecurity concepts, threat management, access control, and protection practices.</p>
-                    <div class="cert-counter">11 / 12</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cert-slide">
-                <div class="glass cert-card">
-                  <div class="cert-image">
-                    <img src="assets/cert12.jpg" alt="CompTIA Network Plus and A Plus">
-                  </div>
-                  <div class="cert-info">
-                    <span class="issuer">CompTIA</span>
-                    <h3>CompTIA Network+ & CompTIA A+</h3>
-                    <p>Foundational certifications in hardware support, troubleshooting, networking, connectivity, and technical support operations.</p>
-                    <div class="cert-counter">12 / 12</div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="slider-controls">
-            <button class="slider-btn" id="prevBtn">Previous</button>
-            <div class="slider-dots" id="sliderDots"></div>
-            <button class="slider-btn" id="nextBtn">Next</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <h2 class="title">Contact</h2>
-        <p class="subtitle">Open to IT Manager, Infrastructure, Cloud, ERP, and Digital Transformation opportunities.</p>
-
-        <div class="contact-grid">
-          <div class="glass card">
-            <h3>Contact Details</h3>
-            <p><strong>Name:</strong> Fadi Chawa</p>
-            <p><strong>Email:</strong> fadi.chawa@gmail.com</p>
-            <p><strong>Location:</strong> Beirut, Lebanon</p>
-            <p><strong>Website:</strong> fadichawa.github.io/fadichawa-portfolio</p>
-          </div>
-
-          <div class="glass card">
-            <h3>Professional Links</h3>
-            <div class="contact-links">
-              <a href="https://linkedin.com/in/fadichawa" target="_blank">LinkedIn</a>
-              <a href="https://github.com/fadichawa" target="_blank">GitHub</a>
-              <a href="Fadi%20Chawa%20Resume.pdf" target="_blank">Resume PDF</a>
-              <a href="mailto:fadi.chawa@gmail.com">Email Me</a>
-            </div>
-            <p>You can reach me directly through email or connect with me on LinkedIn for professional opportunities.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      © 2026 Fadi Chawa • IT Manager Portfolio
-    </div>
-  </footer>
-
-  <script>
-    const track = document.getElementById('certTrack');
-    const slides = document.querySelectorAll('.cert-slide');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const dotsContainer = document.getElementById('sliderDots');
-
-    let currentIndex = 0;
-
-    slides.forEach((_, index) => {
-      const dot = document.createElement('button');
-      dot.classList.add('dot');
-      if(index === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(index));
-      dotsContainer.appendChild(dot);
-    });
-
-    const dots = document.querySelectorAll('.dot');
-
-    function updateSlider() {
-      track.style.transform = `translateX(-${currentIndex * 100}%)`;
-      dots.forEach(dot => dot.classList.remove('active'));
-      dots[currentIndex].classList.add('active');
-    }
-
-    function goToSlide(index) {
-      currentIndex = index;
-      updateSlider();
-    }
-
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      updateSlider();
-    }
-
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      updateSlider();
-    }
-
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
-
-    setInterval(nextSlide, 5000);
-  </script>
-</body>
-</html>
+  }
+</style>
